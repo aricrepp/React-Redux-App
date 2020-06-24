@@ -6,7 +6,7 @@ export const FETCHING_QUOTE_FAILURE = "FETCHING_QUOTE_FAILURE";
 
 
 const headers = {
-  Accept: "object"
+  Accept: "application/hal+json"
 };
 
 export const getQuote = () => dispatch => {
@@ -15,7 +15,7 @@ export const getQuote = () => dispatch => {
     .get("https://tronalddump.io/random/quote", { headers })
     .then(res => {
       console.log(res);
-      dispatch({ type: FETCHING_QUOTE_SUCCESS, payload: res.data});
+      dispatch({ type: FETCHING_QUOTE_SUCCESS, payload: res.data.value});
     })
     .catch(err => {
       console.log(err);
