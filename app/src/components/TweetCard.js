@@ -17,7 +17,7 @@ import PublishIcon from '@material-ui/icons/Publish';
 import {getQuote} from '../actions/actions';
 
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     root: {
         width: '545px',
         height: 'auto',
@@ -71,7 +71,38 @@ const TweetCard = ({getQuote, quote, isFetching, error }) => {
     if(isFetching){
         return (
             <Card className={classes.root}>
+                <CardHeader
+                avatar={
+                    <Avatar alt="Trump" src="https://pbs.twimg.com/profile_images/736392853992001537/eF4LJLkn_400x400.jpg" />
+                }
+                title={
+                <div className={classes.titleCon}>
+                    <div className={classes.titleName}>
+                        <p className={classes.titleP}>Donald J. Trump</p>
+                        <img alt="check" className={classes.titleImg} src={check} />
+                    </div>
+                    <div>
+                        <p className={classes.titleP2}>@ProfessionalMoron</p>
+                    </div>
+                </div>}
+            />
                 <img className={classes.loading} src={loading}></img>
+                <CardActions className={classes.icons}>
+
+                <IconButton aria-label="add to favorites">
+                <ChatBubbleOutlineIcon />
+                </IconButton>
+                <IconButton aria-label="replay">
+                <ReplayIcon />
+                </IconButton>
+                <IconButton aria-label="heart">
+                <FavoriteBorderIcon />
+                </IconButton>
+                <IconButton aria-label="retweet">
+                <PublishIcon />
+                </IconButton>
+
+            </CardActions>
             </Card>
         );
     } 
@@ -101,20 +132,20 @@ const TweetCard = ({getQuote, quote, isFetching, error }) => {
             </CardContent>
             <CardActions className={classes.icons}>
 
-        <IconButton aria-label="add to favorites">
-          <ChatBubbleOutlineIcon />
-        </IconButton>
-        <IconButton aria-label="replay">
-          <ReplayIcon />
-        </IconButton>
-        <IconButton aria-label="heart">
-          <FavoriteBorderIcon />
-        </IconButton>
-        <IconButton aria-label="retweet">
-          <PublishIcon />
-        </IconButton>
+                <IconButton aria-label="add to favorites">
+                <ChatBubbleOutlineIcon />
+                </IconButton>
+                <IconButton aria-label="replay">
+                <ReplayIcon />
+                </IconButton>
+                <IconButton aria-label="heart">
+                <FavoriteBorderIcon />
+                </IconButton>
+                <IconButton aria-label="retweet">
+                <PublishIcon />
+                </IconButton>
 
-      </CardActions>
+            </CardActions>
         </Card>
         <button onClick={getQuote}>Get Quote!</button>
         </>
