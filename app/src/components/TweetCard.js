@@ -42,7 +42,7 @@ const TweetCard = props => {
         <Card className={classes.root}>
             <CardHeader
                 avatar={
-                    <Avatar alt="Trump" src="https://github.com/aricrepp/React-Redux-App/blob/master/app/src/assets/trump.jpg" />
+                    <Avatar alt="Trump" src="https://pbs.twimg.com/profile_images/736392853992001537/eF4LJLkn_400x400.jpg" />
                 }
             />
         </Card>
